@@ -52,13 +52,13 @@ export default function Rooms() {
             <div key={room.id} className="bg-white rounded-sm shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
               
               {/* Room Image Placeholder */}
-              <div className="h-64 bg-gray-200 w-full relative flex items-center justify-center text-gray-400">
+              <div className="min-h-64 bg-gray-200 w-full relative flex items-center justify-center text-gray-400 overflow-hidden">
                 <ImageIcon size={40} className="mb-2 opacity-50" />
                 <span className="text-sm font-medium absolute bottom-4">{room.name} Görseli</span>
                 <img
                   src={`${import.meta.env.BASE_URL}images/${room.image}`}
                   alt={room.name}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="relative z-10 block h-auto w-full object-contain"
                   onError={(event) => {
                     event.currentTarget.style.display = 'none';
                   }}
