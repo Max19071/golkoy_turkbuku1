@@ -1,5 +1,3 @@
-import { Image as ImageIcon } from 'lucide-react';
-
 export default function About() {
   const aboutImage = `${import.meta.env.BASE_URL}images/hakkimizda.jpg`;
 
@@ -32,17 +30,13 @@ export default function About() {
             </div>
           </div>
 
-          {/* Image Placeholder */}
-          <div className="lg:w-1/2 w-full h-[400px] md:h-[500px] bg-gray-200 rounded-sm relative overflow-hidden flex flex-col items-center justify-center text-gray-500">
-            <ImageIcon size={48} className="mb-4 opacity-50" />
-            <span className="font-medium tracking-wide">Hakkımızda Görseli (Buraya Eklenecek)</span>
+          {/* About Image */}
+          <div className="relative aspect-[1693/929] w-full overflow-hidden rounded-sm bg-gray-100 shadow-lg lg:w-1/2">
             <img
               src={aboutImage}
-              alt="Gölköy Yaşam Resort hakkında"
-              className="absolute inset-0 h-full w-full object-cover"
-              onError={(event) => {
-                event.currentTarget.style.display = 'none';
-              }}
+              alt="Milas-Bodrum Havalimanı, Bodrum ve Türkbükü yol haritası"
+              className="absolute inset-0 h-full w-full object-contain"
+              loading="lazy"
             />
             
             {/* Decorative element */}
