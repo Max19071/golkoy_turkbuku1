@@ -1,0 +1,71 @@
+import { ChevronDown, Image as ImageIcon } from 'lucide-react';
+
+export default function Hero() {
+  return (
+    <section id="home" className="relative h-screen flex items-center justify-center bg-gray-200">
+      {/* Background Image Placeholder */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 bg-gray-300">
+        <ImageIcon size={64} className="mb-4 opacity-50" />
+        <span className="text-lg font-medium opacity-70 uppercase tracking-widest">Ana Görsel Alanı</span>
+      </div>
+      
+      {/* Overlay to ensure text readability if an actual image was here */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Hero Content */}
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+        <h1 className="text-4xl md:text-6xl font-serif text-white mb-6 drop-shadow-md">
+          Bodrum'da Ayrıcalıklı Bir Tatil
+        </h1>
+        <p className="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto drop-shadow-md">
+          Eşsiz Bodrum manzarası eşliğinde, unutulmaz anılar biriktireceğiniz lüks ve konforlu bir konaklama deneyimi.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#rooms" 
+            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded-sm font-medium transition-all duration-300"
+          >
+            Odaları Keşfet
+          </a>
+          <a 
+            href="#book" 
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-sm font-medium transition-colors duration-300 shadow-lg"
+          >
+            Rezervasyon Yap
+          </a>
+        </div>
+      </div>
+
+      {/* Booking Bar Placeholder */}
+      <div id="book" className="absolute bottom-0 left-0 right-0 z-20 translate-y-1/2 px-4 hidden md:block">
+        <div className="max-w-5xl mx-auto bg-white p-4 shadow-lg rounded-sm flex items-center justify-between gap-4">
+          <div className="flex-1 grid grid-cols-3 gap-4 border-r pr-4 border-gray-100">
+            <div>
+              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Giriş Tarihi</label>
+              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">[Tarih Seçiniz]</div>
+            </div>
+            <div>
+              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Çıkış Tarihi</label>
+              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">[Tarih Seçiniz]</div>
+            </div>
+            <div>
+              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Misafir</label>
+              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">2 Yetişkin, 0 Çocuk</div>
+            </div>
+          </div>
+          <button className="bg-gray-900 hover:bg-black text-white px-8 py-3 rounded-sm font-medium transition-colors whitespace-nowrap">
+            Uygunluğu Kontrol Et
+          </button>
+        </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-10 md:bottom-24 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <a href="#about" className="text-white/80 hover:text-white transition-colors">
+          <ChevronDown size={32} />
+        </a>
+      </div>
+    </section>
+  );
+}
