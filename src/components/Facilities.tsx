@@ -84,7 +84,7 @@ export default function Facilities() {
 
               {facility.video && (
                 <video
-                  className="relative block h-auto w-full object-contain bg-black"
+                  className="relative mx-auto block h-auto w-[360px] max-w-full object-contain bg-black"
                   src={`${import.meta.env.BASE_URL}videos/${facility.video}`}
                   autoPlay
                   muted
