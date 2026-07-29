@@ -1,6 +1,8 @@
 import { Image as ImageIcon } from 'lucide-react';
 
 export default function About() {
+  const aboutImage = `${import.meta.env.BASE_URL}images/hakkimizda.jpg`;
+
   return (
     <section id="about" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
@@ -34,6 +36,14 @@ export default function About() {
           <div className="lg:w-1/2 w-full h-[400px] md:h-[500px] bg-gray-200 rounded-sm relative overflow-hidden flex flex-col items-center justify-center text-gray-500">
             <ImageIcon size={48} className="mb-4 opacity-50" />
             <span className="font-medium tracking-wide">Hakkımızda Görseli (Buraya Eklenecek)</span>
+            <img
+              src={aboutImage}
+              alt="Gölköy Yaşam Resort hakkında"
+              className="absolute inset-0 h-full w-full object-cover"
+              onError={(event) => {
+                event.currentTarget.style.display = 'none';
+              }}
+            />
             
             {/* Decorative element */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full z-[-1]"></div>
