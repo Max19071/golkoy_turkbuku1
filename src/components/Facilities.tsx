@@ -72,7 +72,7 @@ export default function Facilities() {
               className={`group relative overflow-hidden rounded-sm bg-gray-100 ${
                 index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
-              style={{ minHeight: '300px' }}
+              style={facility.video ? undefined : { minHeight: '300px' }}
             >
               {/* Facility Image Placeholder */}
               <div className="absolute inset-0 bg-gray-300 flex flex-col items-center justify-center text-gray-500 group-hover:scale-105 transition-transform duration-700">
@@ -84,7 +84,7 @@ export default function Facilities() {
 
               {facility.video && (
                 <video
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="relative block h-auto w-full object-contain bg-black"
                   src={`${import.meta.env.BASE_URL}videos/${facility.video}`}
                   autoPlay
                   muted
