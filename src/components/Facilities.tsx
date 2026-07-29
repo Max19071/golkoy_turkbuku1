@@ -7,14 +7,16 @@ const facilities = [
     description: "Türk ve Dünya mutfağından seçkin lezzetler, gün boyu serinletici içecekler sunan barlar.",
     icon: <Utensils size={24} />,
     imageText: "Restoran Görseli",
+    image: null,
     video: "restoran-bar.mp4"
   },
   {
     id: 2,
-    title: "Havuz & Plaj",
-    description: "Açık ve kapalı yüzme havuzları, çocuk havuzu ve anlaşmalı plaj erişimi.",
+    title: "Bar & Deniz",
+    description: "Deniz manzarası eşliğinde, gün boyu serinletici içecekler ve keyifli dinlenme alanları.",
     icon: <Waves size={24} />,
-    imageText: "Havuz/Plaj Görseli",
+    imageText: "Bar ve Deniz Görseli",
+    image: "bar-ve-deniz.jpg",
     video: null
   },
   {
@@ -23,6 +25,7 @@ const facilities = [
     description: "Masaj salonları, Türk hamamı, sauna ve tam donanımlı fitness merkezi.",
     icon: <Sparkles size={24} />,
     imageText: "Spa Merkezi Görseli",
+    image: null,
     video: null
   },
   {
@@ -31,6 +34,7 @@ const facilities = [
     description: "İş toplantıları ve özel etkinlikleriniz için tam donanımlı konferans salonu.",
     icon: <Briefcase size={24} />,
     imageText: "Toplantı Salonu Görseli",
+    image: null,
     video: null
   },
   {
@@ -39,6 +43,7 @@ const facilities = [
     description: "Minik misafirlerimiz için eğitici ve eğlenceli aktiviteler, özel oyun alanları.",
     icon: <Baby size={24} />,
     imageText: "Çocuk Kulübü Görseli",
+    image: null,
     video: null
   }
 ];
@@ -81,6 +86,14 @@ export default function Facilities() {
                   {facility.imageText}
                 </span>
               </div>
+
+              {facility.image && (
+                <img
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={`${import.meta.env.BASE_URL}images/${facility.image}`}
+                  alt={facility.title}
+                />
+              )}
 
               {facility.video && (
                 <video
