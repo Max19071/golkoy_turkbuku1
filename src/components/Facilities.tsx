@@ -6,35 +6,40 @@ const facilities = [
     title: "Restoran & Barlar",
     description: "Türk ve Dünya mutfağından seçkin lezzetler, gün boyu serinletici içecekler sunan barlar.",
     icon: <Utensils size={24} />,
-    imageText: "Restoran Görseli"
+    imageText: "Restoran Görseli",
+    video: "restoran-bar.mp4"
   },
   {
     id: 2,
     title: "Havuz & Plaj",
     description: "Açık ve kapalı yüzme havuzları, çocuk havuzu ve anlaşmalı plaj erişimi.",
     icon: <Waves size={24} />,
-    imageText: "Havuz/Plaj Görseli"
+    imageText: "Havuz/Plaj Görseli",
+    video: null
   },
   {
     id: 3,
     title: "Spa & Wellness",
     description: "Masaj salonları, Türk hamamı, sauna ve tam donanımlı fitness merkezi.",
     icon: <Sparkles size={24} />,
-    imageText: "Spa Merkezi Görseli"
+    imageText: "Spa Merkezi Görseli",
+    video: null
   },
   {
     id: 4,
     title: "Toplantı & Etkinlik",
     description: "İş toplantıları ve özel etkinlikleriniz için tam donanımlı konferans salonu.",
     icon: <Briefcase size={24} />,
-    imageText: "Toplantı Salonu Görseli"
+    imageText: "Toplantı Salonu Görseli",
+    video: null
   },
   {
     id: 5,
     title: "Çocuk Kulübü",
     description: "Minik misafirlerimiz için eğitici ve eğlenceli aktiviteler, özel oyun alanları.",
     icon: <Baby size={24} />,
-    imageText: "Çocuk Kulübü Görseli"
+    imageText: "Çocuk Kulübü Görseli",
+    video: null
   }
 ];
 
@@ -76,6 +81,19 @@ export default function Facilities() {
                   {facility.imageText}
                 </span>
               </div>
+
+              {facility.video && (
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={`${import.meta.env.BASE_URL}videos/${facility.video}`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${facility.title} videosu`}
+                />
+              )}
               
               {/* Gradient overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
