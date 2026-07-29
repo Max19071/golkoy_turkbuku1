@@ -7,6 +7,7 @@ const roomTypes = [
     description: "Şehir veya bahçe manzaralı, konforlu ve şık tasarımlı odalarımız.",
     size: "24 m²",
     capacity: "2 Yetişkin",
+    image: "standart-oda.jpg",
     features: ["Ücretsiz Wi-Fi", "Klima", "Mini Bar", "Kasa"]
   },
   {
@@ -15,6 +16,7 @@ const roomTypes = [
     description: "Eşsiz Bodrum Kalesi ve deniz manzarasına sahip özel tasarım odalar.",
     size: "28 m²",
     capacity: "2 Yetişkin + 1 Çocuk",
+    image: "deniz-manzarali-oda.jpg",
     features: ["Deniz Manzarası", "Balkon", "Ücretsiz Wi-Fi", "Klima", "Mini Bar"]
   },
   {
@@ -23,6 +25,7 @@ const roomTypes = [
     description: "Geniş aileler için ideal, birbirine bağlantılı iki odadan oluşan ferah süitler.",
     size: "45 m²",
     capacity: "4 Yetişkin",
+    image: "aile-suiti.jpg",
     features: ["2 Yatak Odası", "Oturma Alanı", "2 Banyo", "Balkon", "Ücretsiz Wi-Fi"]
   }
 ];
@@ -52,6 +55,14 @@ export default function Rooms() {
               <div className="h-64 bg-gray-200 w-full relative flex items-center justify-center text-gray-400">
                 <ImageIcon size={40} className="mb-2 opacity-50" />
                 <span className="text-sm font-medium absolute bottom-4">{room.name} Görseli</span>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${room.image}`}
+                  alt={room.name}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
               
               <div className="p-6">
