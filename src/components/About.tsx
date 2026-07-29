@@ -16,10 +16,7 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Otelimiz, misafirlerine ayrıcalıklı bir tatil sunmaktadır. Plaja sadece 50 metre, Zeki Müren Sanat Müzesi'ne 300 metre, Bodrum şehir merkezine 2 km, Bodrum Kalesi'ne 2.5 km, Halikarnas Mozolesi'ne 3.5 km ve Milas-Bodrum Havalimanı'na 36 km mesafede yer almaktadır.
-              </p>
-              <p>
-                Konforlu odalarımız, dünya mutfaklarından eşsiz lezzetler sunan restoranımız ve yenilenmenizi sağlayacak spa merkezimiz ile unutulmaz bir konaklama deneyimi sizleri bekliyor.
+                Otelimiz misafirlerine ayrıcalıklı bir tatil sunmak en büyük arzusudur. Odalarımız otantik bir ambiyansa sahiptir. El yapımı makrome tarzı perde ve duvar süsleri ile renk katılmıştır. Odalarımız 16 m2 ortalamasındadır. Odanızdan çıktıktan 10 metre sonra 400 m2 lik lüks bir beach alanına ayak basabileceksiniz. Ondan sonrası ise Bodrum mavisi muhteşem bir deniz sizi bekliyor olacak. Otelimiz Bodrum havaalnına 54 km mesafededir.
               </p>
             </div>
             <div className="mt-8">
