@@ -1,13 +1,24 @@
 import { ChevronDown, Image as ImageIcon } from 'lucide-react';
 
 export default function Hero() {
+  const heroImage = `${import.meta.env.BASE_URL}images/ana-gorsel.jpg`;
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center bg-gray-200">
-      {/* Background Image Placeholder */}
+      {/* Fallback shown until an image is uploaded */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 bg-gray-300">
         <ImageIcon size={64} className="mb-4 opacity-50" />
         <span className="text-lg font-medium opacity-70 uppercase tracking-widest">Ana Görsel Alanı</span>
       </div>
+
+      <img
+        src={heroImage}
+        alt="Gölköy Yaşam Resort"
+        className="absolute inset-0 h-full w-full object-cover"
+        onError={(event) => {
+          event.currentTarget.style.display = 'none';
+        }}
+      />
       
       {/* Overlay to ensure text readability if an actual image was here */}
       <div className="absolute inset-0 bg-black/40"></div>
