@@ -108,19 +108,23 @@ export default function Facilities() {
                 />
               )}
               
-              {/* Gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-              
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 text-white">
-                  {facility.icon}
-                </div>
-                <h3 className="text-xl font-serif font-medium mb-2">{facility.title}</h3>
-                <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  {facility.description}
-                </p>
-              </div>
+              {facility.id !== 3 && (
+                <>
+                  {/* Gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                  
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 text-white">
+                      {facility.icon}
+                    </div>
+                    <h3 className="text-xl font-serif font-medium mb-2">{facility.title}</h3>
+                    <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      {facility.description}
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>
