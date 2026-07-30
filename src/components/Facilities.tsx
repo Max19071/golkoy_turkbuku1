@@ -34,7 +34,7 @@ const facilities = [
     description: "İş toplantıları ve özel etkinlikleriniz için tam donanımlı konferans salonu.",
     icon: <Briefcase size={24} />,
     imageText: "Toplantı Salonu Görseli",
-    image: null,
+    image: "toplanti-etkinlik.jpg",
     video: null
   },
   {
@@ -108,7 +108,7 @@ export default function Facilities() {
                 />
               )}
               
-              {facility.id !== 3 && (
+              {facility.id !== 3 && facility.id !== 4 && (
                 <>
                   {/* Gradient overlay for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
