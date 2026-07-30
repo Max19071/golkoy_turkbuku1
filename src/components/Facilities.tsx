@@ -43,7 +43,7 @@ const facilities = [
     description: "Minik misafirlerimiz için eğitici ve eğlenceli aktiviteler, özel oyun alanları.",
     icon: <Baby size={24} />,
     imageText: "Çocuk Kulübü Görseli",
-    image: null,
+    image: "cocuk-kulubu.jpg",
     video: null
   }
 ];
@@ -72,58 +72,73 @@ export default function Facilities() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {facilities.map((facility, index) => (
-            <div 
-              key={facility.id} 
-              className={`group relative overflow-hidden rounded-sm bg-gray-100 ${
+            <div
+              key={facility.id}
+              className={`${
                 index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
-              style={facility.video ? undefined : { minHeight: '300px' }}
             >
-              {/* Facility Image Placeholder */}
-              <div className="absolute inset-0 bg-gray-300 flex flex-col items-center justify-center text-gray-500 group-hover:scale-105 transition-transform duration-700">
-                <ImageIcon size={48} className="mb-2 opacity-40" />
-                <span className="font-medium tracking-wide uppercase text-sm opacity-60">
-                  {facility.imageText}
-                </span>
+              <div
+                className="group relative overflow-hidden rounded-sm bg-gray-100"
+                style={facility.video ? undefined : { minHeight: '300px' }}
+              >
+                {/* Facility Image Placeholder */}
+                <div className="absolute inset-0 bg-gray-300 flex flex-col items-center justify-center text-gray-500 group-hover:scale-105 transition-transform duration-700">
+                  <ImageIcon size={48} className="mb-2 opacity-40" />
+                  <span className="font-medium tracking-wide uppercase text-sm opacity-60">
+                    {facility.imageText}
+                  </span>
+                </div>
+
+                {facility.image && (
+                  <img
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={`${import.meta.env.BASE_URL}images/${facility.image}`}
+                    alt={facility.title}
+                  />
+                )}
+
+                {facility.video && (
+                  <video
+                    className="relative mx-auto block h-auto w-[360px] max-w-full object-contain bg-black"
+                    src={`${import.meta.env.BASE_URL}videos/${facility.video}`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${facility.title} videosu`}
+                  />
+                )}
+                
+                {facility.id !== 3 && facility.id !== 4 && facility.id !== 5 && (
+                  <>
+                    {/* Gradient overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 text-white">
+                        {facility.icon}
+                      </div>
+                      <h3 className="text-xl font-serif font-medium mb-2">{facility.title}</h3>
+                      <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        {facility.description}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
 
-              {facility.image && (
-                <img
-                  className="absolute inset-0 h-full w-full object-cover"
-                  src={`${import.meta.env.BASE_URL}images/${facility.image}`}
-                  alt={facility.title}
-                />
-              )}
-
-              {facility.video && (
-                <video
-                  className="relative mx-auto block h-auto w-[360px] max-w-full object-contain bg-black"
-                  src={`${import.meta.env.BASE_URL}videos/${facility.video}`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label={`${facility.title} videosu`}
-                />
-              )}
-              
-              {facility.id !== 3 && facility.id !== 4 && (
-                <>
-                  {/* Gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 text-white">
-                      {facility.icon}
-                    </div>
-                    <h3 className="text-xl font-serif font-medium mb-2">{facility.title}</h3>
-                    <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                      {facility.description}
-                    </p>
-                  </div>
-                </>
+              {facility.id === 5 && (
+                <a
+                  className="mt-4 inline-flex items-center text-sm font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4 transition-colors hover:text-blue-900"
+                  href={`${import.meta.env.BASE_URL}?sayfa=diger-gorseller`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Diğer Görseller
+                </a>
               )}
             </div>
           ))}
