@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Map } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -117,13 +117,16 @@ export default function Footer() {
           
         </div>
 
-        {/* Map Placeholder */}
+        {/* Google Maps */}
         <div className="mb-12">
-          <div className="w-full h-64 bg-gray-800 rounded-sm relative flex flex-col items-center justify-center text-gray-500 border border-gray-700">
-            <Map size={48} className="mb-3 opacity-50" />
-            <span className="font-medium tracking-wide">Google Haritalar Konumu (Buraya Eklenecek)</span>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          </div>
+          <iframe
+            title="Gölköy Yaşam Türkbükü Google Haritalar konumu"
+            src="https://www.google.com/maps?q=T%C3%BCrkb%C3%BCk%C3%BC%20Mahallesi%2C%20Liman%20Caddesi%2C%20No%3A%20101%2C%20Bodrum%2C%20Mu%C4%9Fla&output=embed"
+            className="h-64 w-full rounded-sm border border-gray-700"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         {/* Copyright */}
