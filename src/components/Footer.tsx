@@ -121,7 +121,7 @@ export default function Footer() {
         <div className="relative mb-12 overflow-hidden rounded-sm">
           <iframe
             title="Gölköy Yaşam Türkbükü Google Haritalar konumu"
-            src="https://www.google.com/maps?q=G%C3%B6lk%C3%B6y%20Ya%C5%9Fam%20T%C3%BCrkb%C3%BCk%C3%BC%2C%20T%C3%BCrkb%C3%BCk%C3%BC%20Mahallesi%2C%20Liman%20Caddesi%2C%20No%3A%20101%2C%20Bodrum%2C%20Mu%C4%9Fla&output=embed"
+            src="https://www.google.com/maps?q=T%C3%BCrkb%C3%BCk%C3%BC%20Mahallesi%2C%20Liman%20Caddesi%2C%20No%3A%20101%2C%20Bodrum%2C%20Mu%C4%9Fla&output=embed"
             className="h-64 w-full rounded-sm border border-gray-700"
             loading="lazy"
             allowFullScreen
