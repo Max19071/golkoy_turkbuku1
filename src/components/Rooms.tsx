@@ -69,7 +69,7 @@ export default function Rooms() {
                 <h3 className="text-xl font-serif font-medium text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {room.name}
                 </h3>
-                {room.id !== 2 && (
+                {room.id === 3 && (
                   <>
                     <p className="text-gray-600 text-sm mb-6 h-10">
                       {room.description}
