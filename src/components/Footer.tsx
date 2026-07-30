@@ -15,7 +15,7 @@ export default function Footer() {
                 H
               </div>
               <div className="font-serif text-xl font-semibold tracking-wide">
-                Hotel Name
+                Gölköy Yaşam Türkbükü
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -42,8 +42,26 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-white transition-colors">Hakkımızda</a></li>
               <li><a href="#rooms" className="hover:text-white transition-colors">Odalar & Süitler</a></li>
               <li><a href="#facilities" className="hover:text-white transition-colors">Hizmetler</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Galeri</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">S.S.S.</a></li>
+              <li>
+                <a
+                  href={`${import.meta.env.BASE_URL}?sayfa=diger-gorseller`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Galeri
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${import.meta.env.BASE_URL}?sayfa=sss`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  S.S.S.
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -110,7 +128,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Hotel Name. Tüm Hakları Saklıdır.</p>
+          <p>© {new Date().getFullYear()} Gölköy Yaşam Türkbükü. Tüm Hakları Saklıdır.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
             <a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a>

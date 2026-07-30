@@ -5,12 +5,17 @@ import Rooms from './components/Rooms';
 import Facilities from './components/Facilities';
 import Footer from './components/Footer';
 import GalleryPage from './components/GalleryPage';
+import FaqPage from './components/FaqPage';
 
 function App() {
-  const isGalleryPage = new URLSearchParams(window.location.search).get('sayfa') === 'diger-gorseller';
+  const page = new URLSearchParams(window.location.search).get('sayfa');
 
-  if (isGalleryPage) {
+  if (page === 'diger-gorseller') {
     return <GalleryPage />;
+  }
+
+  if (page === 'sss') {
+    return <FaqPage />;
   }
 
   return (
