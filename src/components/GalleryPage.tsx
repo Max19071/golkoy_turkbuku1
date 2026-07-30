@@ -1,9 +1,13 @@
 import { ArrowLeft, Image as ImageIcon } from 'lucide-react';
 
-const galleryItems = Array.from({ length: 6 }, (_, index) => ({
-  id: index + 1,
-  title: `Resim ${index + 1}`
-}));
+const galleryItems = [
+  { id: 1, image: 'galeri-1.jpg' },
+  { id: 2, image: 'galeri-2.jpg' },
+  { id: 3, image: 'galeri-3.jpg' },
+  { id: 4, image: 'galeri-4.jpg' },
+  { id: 5, image: null },
+  { id: 6, image: null }
+];
 
 export default function GalleryPage() {
   return (
@@ -32,13 +36,17 @@ export default function GalleryPage() {
               key={item.id}
               className="group relative aspect-[4/3] overflow-hidden rounded-sm bg-gray-300"
             >
-              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-                <ImageIcon size={52} className="text-gray-500 opacity-40" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <h2 className="absolute bottom-0 left-0 right-0 p-6 font-serif text-xl font-medium text-white">
-                {item.title}
-              </h2>
+              {item.image ? (
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${item.image}`}
+                  alt=""
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <ImageIcon size={52} className="text-gray-500 opacity-40" />
+                </div>
+              )}
             </div>
           ))}
         </div>
