@@ -1,4 +1,5 @@
 import { Image as ImageIcon } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const facilities = [
   {
@@ -44,6 +45,8 @@ const facilities = [
 ];
 
 export default function Facilities() {
+  const { isEnglish } = useLanguage();
+
   return (
     <section id="facilities" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
@@ -51,17 +54,19 @@ export default function Facilities() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <div className="mb-2 text-blue-600 font-semibold tracking-wider uppercase text-sm">
-              Hizmetlerimiz
+              {isEnglish ? 'Our Facilities' : 'Hizmetlerimiz'}
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
-              Ayrıcalıklı Tesis İmkanları
+              {isEnglish ? 'Exclusive Hotel Facilities' : 'Ayrıcalıklı Tesis İmkanları'}
             </h2>
             <p className="text-gray-600">
-              Tatilinizi unutulmaz kılmak için her detayı düşündük. Zengin aktivite seçeneklerimiz ve kaliteli hizmet anlayışımızla hizmetinizdeyiz.
+              {isEnglish
+                ? 'We have considered every detail to make your holiday unforgettable. We are at your service with a wide range of activities and a commitment to quality.'
+                : 'Tatilinizi unutulmaz kılmak için her detayı düşündük. Zengin aktivite seçeneklerimiz ve kaliteli hizmet anlayışımızla hizmetinizdeyiz.'}
             </p>
           </div>
           <button className="whitespace-nowrap px-6 py-2.5 bg-gray-900 text-white hover:bg-gray-800 transition-colors rounded-sm text-sm font-medium">
-            Tüm Hizmetleri Gör
+            {isEnglish ? 'View All Facilities' : 'Tüm Hizmetleri Gör'}
           </button>
         </div>
 
@@ -114,7 +119,7 @@ export default function Facilities() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Diğer Görseller
+                  {isEnglish ? 'More Images' : 'Diğer Görseller'}
                 </a>
               )}
             </div>

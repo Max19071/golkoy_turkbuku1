@@ -1,6 +1,9 @@
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 export default function FaqPage() {
+  const { isEnglish } = useLanguage();
+
   return (
     <main className="min-h-screen bg-neutral-50 px-4 py-12 text-neutral-800 md:px-8 md:py-16">
       <div className="container mx-auto max-w-6xl">
@@ -9,7 +12,7 @@ export default function FaqPage() {
           href={`${import.meta.env.BASE_URL}`}
         >
           <ArrowLeft size={18} />
-          Ana Sayfaya Dön
+          {isEnglish ? 'Back to Home' : 'Ana Sayfaya Dön'}
         </a>
 
         <div className="mb-10">
@@ -17,7 +20,7 @@ export default function FaqPage() {
             Gölköy Yaşam Türkbükü
           </div>
           <h1 className="font-serif text-3xl text-gray-900 md:text-4xl">
-            Sıkça Sorulan Sorular
+            {isEnglish ? 'Frequently Asked Questions' : 'Sıkça Sorulan Sorular'}
           </h1>
         </div>
       </div>

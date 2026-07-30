@@ -1,4 +1,7 @@
+import { useLanguage } from '../LanguageContext';
+
 export default function About() {
+  const { isEnglish } = useLanguage();
   const aboutImage = `${import.meta.env.BASE_URL}images/hakkimizda.jpg`;
 
   return (
@@ -9,19 +12,21 @@ export default function About() {
           {/* Text Content */}
           <div className="lg:w-1/2">
             <div className="mb-2 text-blue-600 font-semibold tracking-wider uppercase text-sm">
-              Hakkımızda
+              {isEnglish ? 'About Us' : 'Hakkımızda'}
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6">
-              Bodrum'un Kalbinde Lüks Bir Kaçamak
+              {isEnglish ? 'A Luxurious Escape in the Heart of Bodrum' : "Bodrum'un Kalbinde Lüks Bir Kaçamak"}
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Otelimiz misafirlerine ayrıcalıklı bir tatil sunmak en büyük arzusudur. Odalarımız otantik bir ambiyansa sahiptir. El yapımı makrome tarzı perde ve duvar süsleri ile renk katılmıştır. Odalarımız 16 m2 ortalamasındadır. Odanızdan çıktıktan 10 metre sonra 400 m2 lik lüks bir beach alanına ayak basabileceksiniz. Ondan sonrası ise Bodrum mavisi muhteşem bir deniz sizi bekliyor olacak. Otelimiz Bodrum havaalnına 54 km mesafededir.
+                {isEnglish
+                  ? 'Our greatest desire is to offer our guests an exclusive holiday. Our rooms have an authentic atmosphere, enriched with handmade macramé-style curtains and wall decorations. Our rooms average 16 m². Just 10 metres from your room, you can step onto our luxurious 400 m² beach area, followed by the magnificent blue waters of Bodrum. Our hotel is 54 km from Bodrum Airport.'
+                  : 'Otelimiz misafirlerine ayrıcalıklı bir tatil sunmak en büyük arzusudur. Odalarımız otantik bir ambiyansa sahiptir. El yapımı makrome tarzı perde ve duvar süsleri ile renk katılmıştır. Odalarımız 16 m2 ortalamasındadır. Odanızdan çıktıktan 10 metre sonra 400 m2 lik lüks bir beach alanına ayak basabileceksiniz. Ondan sonrası ise Bodrum mavisi muhteşem bir deniz sizi bekliyor olacak. Otelimiz Bodrum havaalnına 54 km mesafededir.'}
               </p>
             </div>
             <div className="mt-8">
               <a href="#facilities" className="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2 transition-colors">
-                Tesis imkanlarını inceleyin
+                {isEnglish ? 'Explore our facilities' : 'Tesis imkanlarını inceleyin'}
                 <span className="text-xl">→</span>
               </a>
             </div>

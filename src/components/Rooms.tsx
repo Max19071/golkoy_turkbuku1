@@ -1,9 +1,10 @@
 import { Image as ImageIcon } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
-const roomTypes = [
+const getRoomTypes = (isEnglish: boolean) => [
   {
     id: 1,
-    name: "Standart Oda",
+    name: isEnglish ? "Standard Room" : "Standart Oda",
     description: "Şehir veya bahçe manzaralı, konforlu ve şık tasarımlı odalarımız.",
     size: "24 m²",
     capacity: "2 Yetişkin",
@@ -12,7 +13,7 @@ const roomTypes = [
   },
   {
     id: 2,
-    name: "Standart Oda",
+    name: isEnglish ? "Standard Room" : "Standart Oda",
     description: "Eşsiz Bodrum Kalesi ve deniz manzarasına sahip özel tasarım odalar.",
     size: "28 m²",
     capacity: "2 Yetişkin + 1 Çocuk",
@@ -21,7 +22,7 @@ const roomTypes = [
   },
   {
     id: 3,
-    name: "Banyolarımız",
+    name: isEnglish ? "Our Bathrooms" : "Banyolarımız",
     description: "Geniş aileler için ideal, birbirine bağlantılı iki odadan oluşan ferah süitler.",
     size: "45 m²",
     capacity: "4 Yetişkin",
@@ -31,19 +32,23 @@ const roomTypes = [
 ];
 
 export default function Rooms() {
+  const { isEnglish } = useLanguage();
+  const roomTypes = getRoomTypes(isEnglish);
   return (
     <section id="rooms" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="mb-2 text-blue-600 font-semibold tracking-wider uppercase text-sm">
-            Konaklama
+            {isEnglish ? 'Accommodation' : 'Konaklama'}
           </div>
           <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
-            Odalarımız
+            {isEnglish ? 'Our Rooms' : 'Odalarımız'}
           </h2>
           <p className="text-gray-600">
-            Eşsiz konfor ve modern tasarımı bir araya getiren odalarımızda, Bodrum'un tadını çıkarırken evinizin rahatlığını hissedeceksiniz. Odalarımız klimalı ve wifi erişimlidir.
+            {isEnglish
+              ? 'Enjoy Bodrum while feeling at home in our rooms, where exceptional comfort meets modern design. Our rooms are air-conditioned and have Wi-Fi access.'
+              : "Eşsiz konfor ve modern tasarımı bir araya getiren odalarımızda, Bodrum'un tadını çıkarırken evinizin rahatlığını hissedeceksiniz. Odalarımız klimalı ve wifi erişimlidir."}
           </p>
         </div>
 
@@ -54,7 +59,7 @@ export default function Rooms() {
               {/* Room Image Placeholder */}
               <div className="min-h-64 bg-gray-200 w-full relative flex items-center justify-center text-gray-400 overflow-hidden">
                 <ImageIcon size={40} className="mb-2 opacity-50" />
-                <span className="text-sm font-medium absolute bottom-4">{room.name} Görseli</span>
+                <span className="text-sm font-medium absolute bottom-4">{room.name} {isEnglish ? 'Image' : 'Görseli'}</span>
                 <img
                   src={`${import.meta.env.BASE_URL}images/${room.image}`}
                   alt={room.name}

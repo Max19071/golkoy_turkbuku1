@@ -1,4 +1,5 @@
 import { ArrowLeft, Image as ImageIcon } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const galleryItems = [
   { id: 1, image: 'galeri-1.jpg' },
@@ -10,6 +11,8 @@ const galleryItems = [
 ];
 
 export default function GalleryPage() {
+  const { isEnglish } = useLanguage();
+
   return (
     <main className="min-h-screen bg-neutral-50 px-4 py-12 text-neutral-800 md:px-8 md:py-16">
       <div className="container mx-auto max-w-6xl">
@@ -18,7 +21,7 @@ export default function GalleryPage() {
           href={`${import.meta.env.BASE_URL}#facilities`}
         >
           <ArrowLeft size={18} />
-          Ana Sayfaya Dön
+          {isEnglish ? 'Back to Home' : 'Ana Sayfaya Dön'}
         </a>
 
         <div className="mb-10">
@@ -26,7 +29,7 @@ export default function GalleryPage() {
             Gölköy Yaşam Türkbükü
           </div>
           <h1 className="font-serif text-3xl text-gray-900 md:text-4xl">
-            Diğer Görseller
+            {isEnglish ? 'More Images' : 'Diğer Görseller'}
           </h1>
         </div>
 

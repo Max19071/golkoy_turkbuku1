@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 export default function Navbar() {
+  const { language, isEnglish, toggleLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,11 +16,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Ana Sayfa', href: '#home' },
-    { name: 'Hakkımızda', href: '#about' },
-    { name: 'Odalarımız', href: '#rooms' },
-    { name: 'Hizmetler', href: '#facilities' },
-    { name: 'İletişim', href: '#contact' },
+    { name: isEnglish ? 'Home' : 'Ana Sayfa', href: '#home' },
+    { name: isEnglish ? 'About Us' : 'Hakkımızda', href: '#about' },
+    { name: isEnglish ? 'Our Rooms' : 'Odalarımız', href: '#rooms' },
+    { name: isEnglish ? 'Facilities' : 'Hizmetler', href: '#facilities' },
+    { name: isEnglish ? 'Contact' : 'İletişim', href: '#contact' },
   ];
 
   return (
@@ -58,15 +60,20 @@ export default function Navbar() {
           </ul>
           
           <div className="flex items-center gap-4 border-l pl-4 border-gray-400/30">
-            <button className={`flex items-center gap-1 text-sm ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              aria-label={isEnglish ? 'Türkçeye geç' : 'Switch to English'}
+              className={`flex items-center gap-1 text-sm ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            >
               <Globe size={16} />
-              TR
+              {language.toUpperCase()}
             </button>
             <a 
               href="#book" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-sm text-sm font-medium transition-colors"
             >
-              Rezervasyon
+              {isEnglish ? 'Reservation' : 'Rezervasyon'}
             </a>
           </div>
         </nav>
@@ -74,7 +81,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button 
           type="button"
-          aria-label={isMobileMenuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+          aria-label={isMobileMenuOpen ? (isEnglish ? 'Close menu' : 'Menüyü kapat') : (isEnglish ? 'Open menu' : 'Menüyü aç')}
           aria-expanded={isMobileMenuOpen}
           className={`md:hidden p-2 ${isScrolled ? 'text-gray-900' : 'text-white'}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -99,15 +106,15 @@ export default function Navbar() {
               </li>
             ))}
             <li className="px-8 py-4 flex flex-col gap-3 border-t mt-2">
-              <button className="flex items-center gap-2 text-gray-700">
+              <button type="button" onClick={toggleLanguage} className="flex items-center gap-2 text-gray-700">
                 <Globe size={18} />
-                Dil Seçimi (TR)
+                {isEnglish ? 'Language (EN)' : 'Dil Seçimi (TR)'}
               </button>
               <a 
                 href="#book" 
                 className="bg-blue-600 text-center text-white px-5 py-3 rounded-sm text-sm font-medium"
               >
-                Hemen Rezervasyon Yap
+                {isEnglish ? 'Book Now' : 'Hemen Rezervasyon Yap'}
               </a>
             </li>
           </ul>
