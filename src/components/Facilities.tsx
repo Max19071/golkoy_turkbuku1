@@ -25,7 +25,7 @@ const facilities = [
     description: "Masaj salonları, Türk hamamı, sauna ve tam donanımlı fitness merkezi.",
     icon: <Sparkles size={24} />,
     imageText: "Spa Merkezi Görseli",
-    image: null,
+    image: "spa-wellness.jpg",
     video: null
   },
   {
