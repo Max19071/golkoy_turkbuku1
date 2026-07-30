@@ -73,7 +73,7 @@ export default function Footer() {
                 <MapPin size={18} className="text-blue-500 mt-1 shrink-0" />
                 <div>
                   <span className="block text-white mb-1">Adres:</span>
-                  <span className="italic">[Otel Adresi Buraya Gelecek]</span><br />
+                  <span>Türkbükü Mahallesi, İnönü Caddesi, No: 101</span><br />
                   <span>Bodrum, Muğla / Türkiye</span>
                 </div>
               </li>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <Mail size={18} className="text-blue-500 mt-1 shrink-0" />
                 <div>
                   <span className="block text-white mb-1">E-posta:</span>
-                  <span className="italic">[info@oteladi.com.tr]</span>
+                  <span>info@golkoyyasamturkbuku.com.tr</span>
                 </div>
               </li>
             </ul>
