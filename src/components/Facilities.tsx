@@ -1,20 +1,18 @@
-import { Image as ImageIcon, Utensils, Waves, Sparkles, Briefcase, Baby } from 'lucide-react';
+import { Image as ImageIcon } from 'lucide-react';
 
 const facilities = [
   {
     id: 1,
     title: "Restoran & Barlar",
     description: "Türk ve Dünya mutfağından seçkin lezzetler, gün boyu serinletici içecekler sunan barlar.",
-    icon: <Utensils size={24} />,
     imageText: "Restoran Görseli",
-    image: null,
-    video: "restoran-bar.mp4"
+    image: "restoran-bar.jpg",
+    video: null
   },
   {
     id: 2,
     title: "Bar & Deniz",
     description: "Deniz manzarası eşliğinde, gün boyu serinletici içecekler ve keyifli dinlenme alanları.",
-    icon: <Waves size={24} />,
     imageText: "Bar ve Deniz Görseli",
     image: "bar-ve-deniz.jpg",
     video: null
@@ -23,7 +21,6 @@ const facilities = [
     id: 3,
     title: "Spa & Wellness",
     description: "Masaj salonları, Türk hamamı, sauna ve tam donanımlı fitness merkezi.",
-    icon: <Sparkles size={24} />,
     imageText: "Spa Merkezi Görseli",
     image: "spa-wellness.jpg",
     video: null
@@ -32,7 +29,6 @@ const facilities = [
     id: 4,
     title: "Toplantı & Etkinlik",
     description: "İş toplantıları ve özel etkinlikleriniz için tam donanımlı konferans salonu.",
-    icon: <Briefcase size={24} />,
     imageText: "Toplantı Salonu Görseli",
     image: "toplanti-etkinlik.jpg",
     video: null
@@ -41,7 +37,6 @@ const facilities = [
     id: 5,
     title: "Çocuk Kulübü",
     description: "Minik misafirlerimiz için eğitici ve eğlenceli aktiviteler, özel oyun alanları.",
-    icon: <Baby size={24} />,
     imageText: "Çocuk Kulübü Görseli",
     image: "cocuk-kulubu.jpg",
     video: null
@@ -109,24 +104,6 @@ export default function Facilities() {
                     preload="metadata"
                     aria-label={`${facility.title} videosu`}
                   />
-                )}
-                
-                {facility.id !== 3 && facility.id !== 4 && facility.id !== 5 && (
-                  <>
-                    {/* Gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 text-white">
-                        {facility.icon}
-                      </div>
-                      <h3 className="text-xl font-serif font-medium mb-2">{facility.title}</h3>
-                      <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                        {facility.description}
-                      </p>
-                    </div>
-                  </>
                 )}
               </div>
 
