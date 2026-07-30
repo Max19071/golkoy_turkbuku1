@@ -48,29 +48,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Booking Bar Placeholder */}
-      <div id="book" className="absolute bottom-0 left-0 right-0 z-20 translate-y-1/2 px-4 hidden md:block">
-        <div className="max-w-5xl mx-auto bg-white p-4 shadow-lg rounded-sm flex items-center justify-between gap-4">
-          <div className="flex-1 grid grid-cols-3 gap-4 border-r pr-4 border-gray-100">
-            <div>
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Giriş Tarihi</label>
-              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">[Tarih Seçiniz]</div>
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Çıkış Tarihi</label>
-              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">[Tarih Seçiniz]</div>
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Misafir</label>
-              <div className="text-gray-800 font-medium pb-1 border-b border-gray-200">2 Yetişkin, 0 Çocuk</div>
-            </div>
-          </div>
-          <button className="bg-gray-900 hover:bg-black text-white px-8 py-3 rounded-sm font-medium transition-colors whitespace-nowrap">
-            Uygunluğu Kontrol Et
-          </button>
-        </div>
-      </div>
-
       {/* Scroll Down Indicator */}
       <div className="absolute bottom-10 md:bottom-24 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <a href="#about" className="text-white/80 hover:text-white transition-colors">
