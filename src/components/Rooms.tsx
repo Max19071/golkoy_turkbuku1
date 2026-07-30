@@ -40,10 +40,10 @@ export default function Rooms() {
             Konaklama
           </div>
           <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
-            Odalar & Süitler
+            Odalarımız
           </h2>
           <p className="text-gray-600">
-            Eşsiz konfor ve modern tasarımı bir araya getiren odalarımızda, Bodrum'un tadını çıkarırken evinizin rahatlığını hissedeceksiniz.
+            Eşsiz konfor ve modern tasarımı bir araya getiren odalarımızda, Bodrum'un tadını çıkarırken evinizin rahatlığını hissedeceksiniz. Odalarımız klimalı ve wifi erişimlidir.
           </p>
         </div>
 
