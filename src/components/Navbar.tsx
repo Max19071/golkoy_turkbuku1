@@ -6,6 +6,7 @@ export default function Navbar() {
   const { language, isEnglish, toggleLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAboutMenuOpen, setIsAboutMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,24 +47,48 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-6">
             {navLinks.map((link) => (
-              <li key={link.name} className={link.href === '#about' ? 'group relative' : undefined}>
-                <a
-                  href={link.href}
-                  className={`flex items-center gap-1 text-sm font-medium hover:text-blue-500 transition-colors ${
-                    isScrolled ? 'text-gray-700' : 'text-gray-100'
-                  }`}
-                >
-                  {link.name}
-                  {link.href === '#about' && <ChevronDown size={15} />}
-                </a>
+              <li key={link.name} className={link.href === '#about' ? 'relative' : undefined}>
+                {link.href === '#about' ? (
+                  <button
+                    type="button"
+                    onClick={() => setIsAboutMenuOpen((open) => !open)}
+                    aria-expanded={isAboutMenuOpen}
+                    className={`flex items-center gap-1 text-sm font-medium hover:text-blue-500 transition-colors ${
+                      isScrolled ? 'text-gray-700' : 'text-gray-100'
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown
+                      size={15}
+                      className={`transition-transform ${isAboutMenuOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={`flex items-center gap-1 text-sm font-medium hover:text-blue-500 transition-colors ${
+                      isScrolled ? 'text-gray-700' : 'text-gray-100'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                )}
                 {link.href === '#about' && (
-                  <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className={`${isAboutMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'} absolute left-0 top-full z-50 pt-3 transition-all duration-200`}>
                     <div className="w-56 rounded-sm border border-gray-100 bg-white py-2 shadow-lg">
                       <a
-                        href="https://www.golkoyyasamresort.com/"
+                        href="#about"
+                        onClick={() => setIsAboutMenuOpen(false)}
                         className="block px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-700"
                       >
-                        {isEnglish ? 'Our Rural Tourism Hotel' : 'Kırsal Turizm Otelimiz'}
+                        {isEnglish ? 'Bodrum Türkbükü Hotel' : 'Bodrum Türkbükü Otel'}
+                      </a>
+                      <a
+                        href="https://www.golkoyyasamresort.com/"
+                        onClick={() => setIsAboutMenuOpen(false)}
+                        className="block px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-700"
+                      >
+                        {isEnglish ? 'Rural Tourism Hotel Kastamonu' : 'Kırsal Turizm Otel Kastamonu'}
                       </a>
                     </div>
                   </div>
@@ -109,20 +134,52 @@ export default function Navbar() {
           <ul className="flex flex-col py-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a 
-                  href={link.href} 
-                  className="block px-8 py-3 text-gray-800 hover:bg-gray-50 hover:text-blue-600 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-                {link.href === '#about' && (
+                {link.href === '#about' ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setIsAboutMenuOpen((open) => !open)}
+                      aria-expanded={isAboutMenuOpen}
+                      className="flex w-full items-center justify-between px-8 py-3 text-left font-medium text-gray-800 hover:bg-gray-50 hover:text-blue-600"
+                    >
+                      {link.name}
+                      <ChevronDown
+                        size={17}
+                        className={`transition-transform ${isAboutMenuOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {isAboutMenuOpen && (
+                      <div className="border-l-2 border-blue-200">
+                        <a
+                          href="#about"
+                          className="block py-2.5 pl-12 pr-8 text-sm font-medium text-blue-700 hover:bg-blue-50"
+                          onClick={() => {
+                            setIsAboutMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          {isEnglish ? 'Bodrum Türkbükü Hotel' : 'Bodrum Türkbükü Otel'}
+                        </a>
+                        <a
+                          href="https://www.golkoyyasamresort.com/"
+                          className="block py-2.5 pl-12 pr-8 text-sm font-medium text-blue-700 hover:bg-blue-50"
+                          onClick={() => {
+                            setIsAboutMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          {isEnglish ? 'Rural Tourism Hotel Kastamonu' : 'Kırsal Turizm Otel Kastamonu'}
+                        </a>
+                      </div>
+                    )}
+                  </>
+                ) : (
                   <a
-                    href="https://www.golkoyyasamresort.com/"
-                    className="block border-l-2 border-blue-200 py-2 pl-12 pr-8 text-sm font-medium text-blue-700 hover:bg-blue-50"
+                    href={link.href}
+                    className="block px-8 py-3 text-gray-800 hover:bg-gray-50 hover:text-blue-600 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {isEnglish ? 'Our Rural Tourism Hotel' : 'Kırsal Turizm Otelimiz'}
+                    {link.name}
                   </a>
                 )}
               </li>
