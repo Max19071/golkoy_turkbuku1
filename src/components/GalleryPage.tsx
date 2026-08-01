@@ -26,7 +26,7 @@ export default function GalleryPage() {
 
         <div className="mb-10">
           <div className="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-600">
-            Gölköy Yaşam Türkbükü
+            Gölköy Turizm Türkbükü
           </div>
           <h1 className="font-serif text-3xl text-gray-900 md:text-4xl">
             {isEnglish ? 'More Images' : 'Diğer Görseller'}

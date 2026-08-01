@@ -32,14 +32,14 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex min-w-0 items-center gap-2.5" aria-label="Gölköy Yaşam Türkbükü ana sayfa">
+        <a href="#home" className="flex min-w-0 items-center gap-2.5" aria-label="Gölköy Turizm Türkbükü ana sayfa">
           <img
             src={`${import.meta.env.BASE_URL}images/golkoy-yasam-turkbuku-logo.webp`}
-            alt="Gölköy Yaşam Türkbükü amblemi"
+            alt="Gölköy Turizm Türkbükü amblemi"
             className="h-12 w-12 shrink-0 rounded-full object-cover shadow-md ring-1 ring-white/30 md:h-14 md:w-14"
           />
           <div className={`whitespace-nowrap font-serif text-base font-semibold tracking-wide sm:text-lg md:text-xl ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
-            Gölköy Yaşam Türkbükü
+            Gölköy Turizm Türkbükü
           </div>
         </a>
 

@@ -18,7 +18,7 @@ export default function Footer() {
                 H
               </div>
               <div className="font-serif text-xl font-semibold tracking-wide">
-                Gölköy Yaşam Türkbükü
+                Gölköy Turizm Türkbükü
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -127,7 +127,7 @@ export default function Footer() {
         {/* Google Maps */}
         <div className="relative mb-12 overflow-hidden rounded-sm">
           <iframe
-            title="Gölköy Yaşam Türkbükü Google Haritalar konumu"
+            title="Gölköy Turizm Türkbükü Google Haritalar konumu"
             src="https://www.google.com/maps?q=T%C3%BCrkb%C3%BCk%C3%BC%20Mahallesi%2C%20Liman%20Caddesi%2C%20No%3A%20101%2C%20Bodrum%2C%20Mu%C4%9Fla&output=embed"
             className="h-64 w-full rounded-sm border border-gray-700"
             loading="lazy"
@@ -135,13 +135,13 @@ export default function Footer() {
             referrerPolicy="no-referrer-when-downgrade"
           />
           <div className="pointer-events-none absolute left-1/2 top-[47%] z-10 ml-5 -translate-y-full whitespace-nowrap rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-lg">
-            Gölköy Yaşam Türkbükü
+            Gölköy Turizm Türkbükü
           </div>
         </div>
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Gölköy Yaşam Türkbükü. {isEnglish ? 'All Rights Reserved.' : 'Tüm Hakları Saklıdır.'}</p>
+          <p>© {new Date().getFullYear()} Gölköy Turizm Türkbükü. {isEnglish ? 'All Rights Reserved.' : 'Tüm Hakları Saklıdır.'}</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">{isEnglish ? 'Privacy Policy' : 'Gizlilik Politikası'}</a>
             <a href="#" className="hover:text-white transition-colors">{isEnglish ? 'Terms of Use' : 'Kullanım Şartları'}</a>
