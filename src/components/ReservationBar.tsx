@@ -70,7 +70,7 @@ export default function ReservationBar() {
               onChange={(event) => setGuests(event.target.value)}
               className="h-12 w-full rounded-lg border border-stone-300 bg-white px-3 text-stone-800 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             >
-              {Array.from({ length: 8 }, (_, index) => index + 1).map((count) => (
+              {Array.from({ length: 3 }, (_, index) => index + 1).map((count) => (
                 <option key={count} value={count}>
                   {count} {isEnglish ? (count === 1 ? 'Guest' : 'Guests') : 'Kişi'}
                 </option>
