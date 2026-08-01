@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             src={`${import.meta.env.BASE_URL}images/golkoy-yasam-turkbuku-logo.webp`}
             alt="Gölköy Turizm Türkbükü amblemi"
-            className="h-12 w-12 shrink-0 rounded-full object-cover shadow-md ring-1 ring-white/30 md:h-14 md:w-14"
+            className="h-12 w-[4.5rem] shrink-0 rounded-md bg-white object-contain p-0.5 shadow-md ring-1 ring-white/30 md:h-14 md:w-20"
           />
           <div className={`whitespace-nowrap font-serif text-base font-semibold tracking-wide sm:text-lg md:text-xl ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
             Gölköy Turizm Türkbükü
