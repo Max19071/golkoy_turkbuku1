@@ -39,6 +39,11 @@ export default function Rooms() {
       <div className="container mx-auto px-4 md:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
+          <img
+            src={`${import.meta.env.BASE_URL}images/golkoy-yasam-turkbuku-logo.webp`}
+            alt="Gölköy Turizm Türkbükü logosu"
+            className="mx-auto mb-5 h-24 w-40 object-contain md:h-28 md:w-48"
+          />
           <div className="mb-2 text-blue-600 font-semibold tracking-wider uppercase text-sm">
             {isEnglish ? 'Accommodation' : 'Konaklama'}
           </div>
