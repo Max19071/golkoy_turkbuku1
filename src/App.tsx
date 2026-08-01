@@ -6,6 +6,7 @@ import Facilities from './components/Facilities';
 import Footer from './components/Footer';
 import GalleryPage from './components/GalleryPage';
 import FaqPage from './components/FaqPage';
+import ReservationBar from './components/ReservationBar';
 
 function App() {
   const page = new URLSearchParams(window.location.search).get('sayfa');
@@ -23,6 +24,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <ReservationBar />
         <About />
         <Rooms />
         <Facilities />
